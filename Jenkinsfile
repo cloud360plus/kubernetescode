@@ -21,7 +21,7 @@ node {
 
     stage('Push image') {
         script {
-            docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            docker.withRegistry('santoshgupta022/test', 'dockerhub') {
                 app.push("${env.BUILD_NUMBER}")
             }
         }
