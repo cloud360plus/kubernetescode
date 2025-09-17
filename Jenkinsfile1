@@ -1,0 +1,40 @@
+node {
+    def app
+
+    stage('Clone repository') {
+        checkout scm
+    }
+
+    stage('Build image') {
+        script {
+             app.inside {
+            sh 'echo "Build Successfully"'
+
+        }
+    }
+
+    stage('Test image') {
+        script {
+            app.inside {
+                sh 'echo "Tests passed"'
+            }
+        }
+    }
+
+    stage('Push image') {
+        script {
+            app.inside {
+                sh 'echo "Image push successfully"
+                
+            }
+        }
+    }
+
+    stage('Trigger ManifestUpdate') {
+        script {
+            echo "Triggering updatemanifest job"
+            )
+            ]
+        }
+    }
+}
